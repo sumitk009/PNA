@@ -635,13 +635,24 @@ const quizData = [
        Description: "Because we must demonstrate that the updates perform as well as the existing model before we can use it in production, we would be seeking an offline validation method. Both k-fold and backtesting with historic data are offline validation methods and will allow us to evaluate the model performance without having to use live production traffic. Validate a Machine Learning Model - Amazon SageMaker"
   }
 ];
-
 let currentQuestion = 0;
 let correctCount = 0;
 let incorrectCount = 0;
 
+// Function to shuffle an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function displayQuestion() {
   const quizElement = document.getElementById('quiz');
+  
+  // Shuffle the quizData array
+  shuffleArray(quizData);
+  
   const questionData = quizData[currentQuestion];
   
   const html = `
@@ -719,3 +730,4 @@ function showResult() {
 }
 
 displayQuestion();
+
