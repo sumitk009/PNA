@@ -1,4 +1,7 @@
-
+function startQuiz() {
+  document.querySelector('.homepage-container').style.display = 'none';
+  document.querySelector('.quiz-container').style.display = 'block';
+}
 const quizData = [
   {
     Question: "As a cloud architect, you are responsible for preparing a migration plan for your company. You want to migrate Apache Kafka (real-time streaming data pipelines) to the Google Cloud. Which Google Cloud service should you use?",
