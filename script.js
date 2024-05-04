@@ -177,7 +177,7 @@ const quizData = [
   {
     question: "You are a machine learning specialist analyzing a large dataset with 20 features. What visualization can be used to show all 20 features and the correlation they have with all other features?",
     options: [ "Histogram",
-     "Bubble Chart",
+     "Heatmap",
      "Bar Chart",
      "Box Plot",
        ], answer: "Heatmap",
@@ -207,7 +207,7 @@ const quizData = [
     question: "You have been tasked with creating a labeled dataset by classifying text data into different categories depending on the summary of the corpus. You plan to use this data with a particular machine learning algorithm within AWS. Your goal is to make this as streamlined as possible with minimal amount of setup from you and your team. What tool can be used to help label your dataset with the minimum amount of setup?",
     options: [ "AWS Comprehend entity detection",
      "Marketplace AMI for NLP problems",
-     "AWS Comprehend sentiment analysis",
+     "AWS SageMaker GroundTruth text classification job",
      "Amazon Neural Topic Modeling (NTM) built-in algorithm",
        ], answer: "AWS SageMaker GroundTruth text classification job",
      Description: "You can use SageMaker Ground Truth to create ground truth datasets by creating labeling jobs. When you create a text classification job, workers group text into the categories that you define. You can define multiple categories but the worker can apply only one category to the text. Use the instructions to guide your workers to make the correct choice. Always define a generic class in addition to your specific classes. Giving your workers a generic option helps to minimize inaccurately classified text. Amazon SageMaker Ground Truth - Amazon SageMaker"
@@ -501,7 +501,7 @@ const quizData = [
     options: [ "Linear Regression",
      "K-Nearest Neighbor",
      "Multi-Class Classification",
-     "Random Cut Forest",
+     "K-Means",
        ], answer: "K-Means",
        Description: "K-means is an unsupervised learning algorithm. It attempts to find discrete groupings within data, where members of a group are as similar as possible to one another and as different as possible from members of other groups. You define the attributes that you want the algorithm to use to determine similarity. K-Means Algorithm - Amazon SageMaker"
   },
@@ -549,7 +549,7 @@ const quizData = [
     question: "You have setup autoscaling for your deployed model using SageMaker Hosting Services. You notice that in times of heavy load spikes, it takes a long time for the hosted model to scale out in response to the load. How might you speed up the autoscaling process?",
     options: [ "Change the timeout in the auto-scaling Lambda function.",
      "Disable CloudWatch advanced tracking metrics.",
-     "Change the scale metric from InvocationsPerInstance to MemoryUtilization.",
+     "Reduce the cooldown period for automatic scaling.",
      "Create a new target metric based on time since last scale event.",
   
     ], answer: "Reduce the cooldown period for automatic scaling.",
