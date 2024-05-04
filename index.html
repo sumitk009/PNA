@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Machine Learning</title>
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
-<body> <center>
-  <!-- Homepage Container -->
-  <div class="homepage-container">
-    <h1>Welcome to AWS Certified Machine Learning</h1>
-    <p>Are you ready to test your knowledge ?</p>
-    <button onclick="startQuiz()">Start Quiz</button>
-  </div> 
+<body background="bg.jpg">
+    
+    <center> <div id="homepage" class="homepage-container">
+        
+        <h1>Welcome to AWS Certified ML</h1>
+        <h3>Are you ready to test your knowledge ?</h3>
+        <button id="start-button" onclick="startQuiz()">Start Quiz</button> </center>
+        
+    </div>
 
-  <!-- Quiz Container -->
-  <div class="container quiz-container">
-    <h1>AWS Certified Machine Learning</h1>
-    <div id="quiz"></div>
-    <button onclick="nextQuestion()">Next</button>
-    <button id="submit" onclick="submitQuiz()">Submit</button>
-    <div id="result" class="result"></div>
-  </div>
-</center>
+    <div id="quiz-container" class="quiz-container" style="display: none;">
+        <h1>AWS Certified Machine Learning</h1>
+        <div id="question-container"></div>
+        <div id="options-container"></div>
+        <center>
+            <button id="submit-button" class="option-button">Submit</button>
+            <button id="next-button" class="option-button">Next</button>
+        </center>
+        <div id="result-container"></div>
 
-  <script src="script.js"></script>
- 
+        <div id="user-details-form" style="display: none;">
+            <h2>Enter Your Details</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <br>
+            <button onclick="saveDetails()">Save Details</button>
+        </div>
 
+    </div>
+
+<script src="script.js"></script>
+
+   
 </body>
 </html>
