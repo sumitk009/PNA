@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 const quizData = [
    
   {
@@ -801,6 +809,35 @@ function showResult() {
   resultContainer.innerHTML += `<p>Total Correct Answers: ${correctCount}</p>`;
   resultContainer.innerHTML += `<p>Total Incorrect Answers: ${incorrectCount}</p>`;
 }
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyvKj0tbhv959HAntTSJTa5H1vsCTQYsVjOXHb5fiOv4BfQODP5N6PPe3u6QGRsSkMXWw/exec';
+const form = document.getElementById('details-form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    if (name && email) {
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                alert("Accepted your details....");
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+            })
+            .catch(error => console.error('Error!', error.message));
+    } else {
+        alert('Please provide your name and email to start the quiz.');
+    }
+});
+
+document.getElementById('start-quiz-button').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('page2').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    // Additional logic to start the quiz can be added here
+});
 
 
 
