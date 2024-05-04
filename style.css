@@ -1,108 +1,137 @@
-
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-}
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 2px 1.5px rgba(0, 0, 0, 0.8);
-}
-h1, h2, h3 {
-  margin-top: 0;
-  
-}
-h1{
-    background-color:#007bff;
-    color: white;
-    box-shadow: 2px 4px 1px 0px rgba(0, 0, 0, 0.6);
-    padding: 0.6rem;
-    border-radius: 0.4rem;
-    
-    
-}
-.question {
-  margin-bottom: 2rem;
-  padding: 0.5rem;
-  background-color: #ebebeba7;
-  border-radius: 1rem;
-  font-size: larger;
-  box-shadow: 0px 1.2px 0px 1.5px  rgba(0, 0, 0, 0.61);
-}
-.options {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  align-self: center;
-  text-align-last:left;
-
-}
-.option {
-  
-  font-size: large;
-  font-weight: bold;
-  background-color: #ffffff;
-  border-radius: 2rem;
-  color: rgb(0, 0, 0);
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 4px 1px  black;
-  
-  
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: large;
-  font-weight: 600;
-}
-#submit{
-    background-color: #28a745;
-}
-#submit:hover{
-    background-color: green;
-}
-button:hover {
-  background-color: #0056b3;
-}
-.correct-answer {
-  color: rgb(0, 254, 0);
-  /* font-size: 2rem; */
-  font-weight: 900;
-}
-.incorrect-answer {
-  color: red;
-  /* font-size:1.5rem; */
-  font-weight: 900;
-}
-.result {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  color: #fff;
-}
-.correct-result {
-  background-color: #28a745; /* Green */
-}
-.incorrect-result {
-  background-color: #dc3545; /* Red */
-}
-.homepage-container {
-  display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .quiz-container {
-  display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
 }
 
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    background-color: #3498DB;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 0px 1px rgba(0, 0, 0, 0.65);
+}
+
+#question-container {
+    margin-bottom: 30px;
+    font-size: 20px;
+    background-color: #d2d1d5;
+    font-weight: 900;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.option-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 0;
+    background-color: #404041;
+    color: #fcf8f8;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.option-button:hover {
+    background-color: #6fc9c9;
+    color: black;
+}
+
+.option-button.correct {
+    background-color: #28a745;
+}
+
+.option-button.wrong {
+    background-color: #dc3545;
+}
+
+#next-button {
+    display: none;
+    margin-top: 20px;
+    padding: 12px 0;
+    width: fit-content;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.4rem;
+}
+
+#next-button:hover {
+    background-color: #0B6623;
+}
+
+#result-container {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#submit-button {
+    background-color: #200ae6;
+    transition: background-color 0.9s ease;
+    width: fit-content;
+    padding: 0.4rem;
+}
+
+#submit-button:hover {
+    background-color: #0c035f;
+    color: white;
+}
+
+#start-button {
+    background-color: rgb(0, 183, 0); /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 4px 2px;
+    transition-duration: 1s;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: 900;
+    box-shadow: 0px 0px 0px 1px black;
+}
+
+#start-button:hover {
+    background-color: #76ff5b; /* Darker Green */
+    color: rgb(1, 5, 26);
+    font-weight: 800;
+    transition-duration: 1s;
+    box-shadow: 0px 0px 0px 1px rgb(255, 255, 255);
+}
+h3{
+    background-color: rgba(255, 255, 255, 0.424);
+    font-size: large;
+    font-weight: bolder;
+    width: fit-content;
+    border-radius: 2rem;
+    padding: 1rem;
+}
