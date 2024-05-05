@@ -155,3 +155,8 @@ input{
     border-color: black;
     cursor: pointer;
 }
+
+.blur {
+    filter: blur(3px); /* Adjust the blur amount as needed */
+}
+
