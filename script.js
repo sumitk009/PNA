@@ -841,4 +841,40 @@ document.getElementById('start-quiz-button').addEventListener('click', function(
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const detailsForm = document.getElementById("details-form");
+  const submitButton = document.getElementById("submit");
+  const loadingMessage = document.getElementById("loading-message");
 
+  // Event listener for form submission
+  detailsForm.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Show loading message
+      loadingMessage.style.display = "block";
+
+      // Simulate form submission delay (replace this with actual submission logic)
+      setTimeout(function() {
+          // Get user details from the form
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const mobile = document.getElementById("mobile").value;
+
+          // You can perform validation here if needed
+
+          // Hide loading message
+          loadingMessage.style.display = "none";
+
+          // Remove blur class from the form
+          detailsForm.classList.remove("blur");
+
+          // You can proceed to display the next page or perform other actions here
+      }, 2000); // Simulated delay of 2 seconds (replace with actual submission logic)
+  });
+
+  // Event listener for submit button click
+  submitButton.addEventListener("click", function() {
+      // Add blur class to the form when the submit button is clicked
+      detailsForm.classList.add("blur");
+  });
+});
